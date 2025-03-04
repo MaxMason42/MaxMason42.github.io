@@ -963,12 +963,12 @@ main {
 .project-card {
   position: relative;
   width: 100%;
-  height: 150px;
+  height: 200px;
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 15px;
   background: var(--eerie-black-2);
-  border: 1px solid hsl(45, 54%, 58%);
+  border: 1px solid var(--jet);
   padding: 20px;
   transition: var(--transition-1);
 }
@@ -980,10 +980,10 @@ main {
 }
 
 .project-item-icon-box {
-  --scale: 0.8;
+  --scale: 0.5;
 
   background: var(--jet);
-  color: var(--orange-yellow-crayola);
+  color: hsl(45, 54%, 58%);
   position: absolute;
   top: 50%;
   left: 50%;
