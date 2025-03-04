@@ -965,11 +965,6 @@ main {
   border-radius: 16px;
   padding: 25px 20px;
   transition: var(--transition-1);
-  width: 280px;
-  height: 140px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .project-item > a:hover {
