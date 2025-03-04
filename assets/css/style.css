@@ -934,12 +934,15 @@ main {
 
 .project-list {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 30px;
   margin-bottom: 10px;
 }
 
-.project-item { display: none; }
+.project-item { 
+  display: none; 
+  min-height: 200px;
+}
 
 .project-item.active {
   display: block;
@@ -951,30 +954,31 @@ main {
   100% { transform: scale(1); }
 }
 
-.project-item > a { width: 100%; }
+.project-item > a { 
+  width: 100%;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
 
-.project-img {
+.project-card {
   position: relative;
   width: 100%;
   height: 200px;
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 15px;
-}
-
-.project-img::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  z-index: 1;
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  padding: 20px;
   transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
+.project-item > a:hover .project-card {
+  background: hsla(0, 0%, 10%, 0.9);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
 
 .project-item-icon-box {
   --scale: 0.8;
@@ -1000,17 +1004,11 @@ main {
 
 .project-item-icon-box ion-icon { --ionicon-stroke-width: 50px; }
 
-.project-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: var(--transition-1);
-}
-
-.project-item > a:hover img { transform: scale(1.1); }
-
 .project-title,
-.project-category { margin-left: 10px; }
+.project-category { 
+  margin-left: 0;
+  margin-bottom: 10px;
+}
 
 .project-title {
   color: var(--white-2);
@@ -1026,25 +1024,11 @@ main {
   font-weight: var(--fw-300);
 }
 
-.project-box {
-  display: block;
-  width: 300px;
-  height: 100px;
-  border: 1px solid hsl(45, 54%, 58%);
-  border-radius: 8px;
-  padding: 20px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  text-decoration: none;
-}
-
-.project-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-}
-
-.project-item {
-  margin-bottom: 20px;
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .project-list {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
 }
 
 
