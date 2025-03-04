@@ -870,7 +870,6 @@ main {
 
 
 
-
 /*-----------------------------------*\
   #PORTFOLIO
 \*-----------------------------------*/
@@ -961,7 +960,7 @@ main {
 .project-item > a {
   position: relative;
   background: var(--eerie-black-2);
-  border: 1px solid hsl(45, 54%, 58%); /*vtesting color swap from ar(--jet)*/
+  border: 1px solid var(--jet);
   border-radius: 16px;
   padding: 25px 20px;
   transition: var(--transition-1);
